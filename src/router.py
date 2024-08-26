@@ -5,10 +5,10 @@ router = APIRouter()
 
 
 @router.get('')
-def get_all_notes():
+async def get_all_notes():
     ...
 
 
 @router.post('')
-def add_note():
+async def add_note():
     ...
