@@ -11,5 +11,3 @@ class CheckTextYandexSpeller(CheckText):
 
     def execute(self) -> str:
         return self._api_client.spelled(self.text)
-
-

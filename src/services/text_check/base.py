@@ -7,5 +7,4 @@ class CheckText(ABC):
     text: str
 
     @abstractmethod
-    def execute(self) -> str:
-        ...
+    def execute(self) -> str: ...
