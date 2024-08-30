@@ -6,7 +6,7 @@ class NotesOrm(BaseDataBase):
     __tablename__ = "notes"
 
     user_id: Mapped[int]
-    title: Mapped[str] = mapped_column(unique=True)
+    title: Mapped[str]
     description: Mapped[str | None]
 
     def __repr__(self):
