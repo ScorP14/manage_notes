@@ -1,0 +1,38 @@
+services:
+
+  api_app:
+    build: .
+    container_name: api-app-note
+
+    environment:
+      POSTGRESQL__HOST: postgresql_note
+
+
+    volumes:
+      - .:/src
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgresql_note
+    command: uvicorn src.app:get_app --host 0.0.0.0 --port 8000 --factory
+
+
+
+
+  postgresql_note:
+    image: postgres
+    restart: always
+    container_name: postgresql_database
+
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: db_note_app
+    ports:
+      - 5432:5432
+
+    volumes:
+      - ~/pgdata_note_app:/var/lib/postgresql/data
+
+
+

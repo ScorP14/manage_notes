@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from pyaspeller import YandexSpeller
 
-from src.services.text_check.base import CheckText
+from src.services.checking_text.base import CheckText
 
 
 @dataclass
